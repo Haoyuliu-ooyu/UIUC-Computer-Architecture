@@ -13,9 +13,14 @@ endmodule // mux2
 
 // output is A (when control == 00) or B (when control == 01) or
 //           C (when control == 10) or D (when control == 11)
-module mux4(out, A, B, C, D, control);
-    output      out;
+module mux4(outPut, A, B, C, D, control);
+    output      outPut;
     input       A, B, C, D;
     input [1:0] control;
+    wire wAB, wCD;
+
+    mux2 ab(wAB, A, B, control[0]);
+    mux2 cd(wCD, C, D, control[0]);
+    mux2 out(outPut, wAB, wCD, control[1]);
 
 endmodule // mux4
