@@ -40,6 +40,7 @@ module alu32(out, overflow, zero, negative, A, B, control);
     alu1 a31(out[31], carryout[31], A[31], B[31], carryout[30], control);
 
     assign negative = out[31];
+    
     assign zero = ~|out;
     xor xorOverflow(overflow, carryout[30], carryout[31]);
 
