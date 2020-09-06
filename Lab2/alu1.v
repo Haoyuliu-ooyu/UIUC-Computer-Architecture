@@ -22,7 +22,21 @@ module alu1(out, carryout, A, B, carryin, control);
     output      out, carryout;
     input       A, B, carryin;
     input [2:0] control;
+    wire w1, w2, w3, w4, w5, w6, wAdd, wSub, wAnd, wOr, wNor, wXor;
 
     // add code here!!!
+    xor n1(w1, control[0], B);
+    full_adder add1(w2, carryout, A, w1, carryin);
+    and a1(w3, A, B);
+    or o1(w4, A, B);
+    nor n1(w5, A, B);
+    xor x1(w6, A, B);
 
+    assign wAdd = w2 & (control == 3'h2);
+    assign wSub = w2 & (control == 3'h3);
+    assign wAnd = w3 & (control == 3'h4);
+    assign wOr = w4 & (control == 3'h5);
+    assign wNor = w5 & (control == 3'h6);
+    assign wXor = w6 & (control == 3'h7);
+    or o0(out, wAdd, wSub, wAnd, wOr, wNor, wXor);
 endmodule // alu1
