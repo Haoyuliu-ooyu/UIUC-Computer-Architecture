@@ -7,9 +7,9 @@ int
 main() {
     int width = 32;
     for (int i = 1; i < width; i++) {
-        printf(  "alu1 a%d(out[%d], carryout[%d], A[%d], B[%d], carryout[%d], control);\n", i, i, i, i, i, i - 1);
+        printf(  "dffe d%d(q[%d], d[%d], clk, enable, reset);\n", i, i, i);
     }
 }
 
-// make generator
+// make generator module dffe(q, d, clk, enable, reset);
 // ./generator

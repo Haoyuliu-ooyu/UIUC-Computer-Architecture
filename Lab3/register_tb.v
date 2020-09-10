@@ -15,16 +15,27 @@ module test;
         # 10
           // write 88 to the register
           enable = 1;
-          d = 88;
+          d = 12;
 
         # 10
           // try writing to the register when its disabled
           enable = 0;
-          d = 89;
+          d = 12;
 
         // Add your own testcases here!
+        # 10
+          reset = 1;
 
-        # 700 $finish;
+        # 10
+          reset = 0;
+          enable = 1;
+          d = 10;
+
+        # 10
+          enable = 0;
+          d = 13;
+
+        # 10 $finish;
     end
     
     initial begin
