@@ -22,7 +22,7 @@ module reg_writer(done, regnum, direction, go, clock, reset);
 	wire sDown3_next = sDown2 & ~reset;
 	wire sDown4_next = sDown3 & ~reset;
 	 
-	wire sDone_next = ((sUp4 | sDown4)  | (sDone & ~go)) & ~reset;
+	wire sDone_next = ((sUp4 | sDown4)  | (sDone & ~go)) & ~resetfound;
 
 	dffe fsGarbage(sGarbage, sGarbage_next, clock, 1'b1, 1'b0);
 	dffe fsStart(sStart, sStart_next, clock, 1'b1, 1'b0);
