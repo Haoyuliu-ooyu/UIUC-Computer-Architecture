@@ -16,12 +16,6 @@ module decoder_test;
         # 10 opcode = `OP_ANDI; // try andi
         # 10 opcode = `OP_ORI; // try ori
         # 10 opcode = `OP_XORI; // try xori
-        # 10 opcode = 6'b111111; funct = `OP0_ADD; // addtion should fail
-        # 10 opcode = 6'b111111; funct = `OP0_SUB; // subtraction should fail
-        # 10 opcode = 6'b111111; funct = `OP0_AND; // and should fail
-        # 10 opcode = 6'b111111; funct = `OP0_OR; //or should fail
-        # 10 opcode = 6'b111111; funct = `OP0_NOR; // nor should fail
-        # 10 opcode = 6'b111111; funct = `OP0_XOR; // xor should fail
         # 10 $finish;
     end
 
