@@ -41,7 +41,7 @@ endmodule // register
 module regfile (rsData, rtData,
                 rsNum, rtNum, rdNum, rdData, 
                 rdWriteEnable, clock, reset);
-
+                
     output [31:0] rsData, rtData;
     input   [4:0] rsNum, rtNum, rdNum;
     input  [31:0] rdData;
