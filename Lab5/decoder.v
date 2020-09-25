@@ -51,7 +51,7 @@ module mips_decode(alu_op, writeenable, rd_src, alu_src2, except, control_type,
     wire sb = (opcode == `OP_SB);
     assign addm = (opcode == `OP_OTHER0) && (funct == `OP0_ADDM);
 
-    assign rd_src = addi | andi | ori | xori | beq | bne | lui | slt | lw | sw | sb;
+    assign rd_src = addi | andi | ori | xori | lui | slt | lw | lbu;
     assign except = ~(add|sub|and_|or_|nor_|xor_|addi|andi|ori|xori|beq|bne|j|jr|lui|slt|lw|lbu|sw|sb|addm);
     assign writeenable = add|sub|and_|or_|nor_|xor_|addi|andi|ori|xori|lui|slt|lw|lbu|addm;
 
