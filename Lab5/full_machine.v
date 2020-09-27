@@ -9,11 +9,12 @@ module full_machine(except, clock, reset);
     input       clock, reset;
 
     wire [31:0] inst, wdata, slt_out, wdata_1, nextPC_3, addm_1_, addm_2_;
-    wire [31:0] PC, nextPC_1, nextPC_2, nextPC, wdata_0, negative_flag,
-                 rsData, rtData, alu1_out, sign_e_out, loaded_data,
+    wire [31:0] PC, nextPC_1, nextPC_2, nextPC, wdata_0, slt_flag,
+                 rsData, rtData, alu1_out, sign_e_out, loaded_data, overflow_flag,
                   zero_e_out, B_, data_mem_out, branch_offset, loaded_byte_32;
     wire [4:0] w_addr;
-    wire wr_enable, rd_src, overflow, zero, negative, mem_read, word_we, byte_we, slt, lui, addm, byte_load;
+    wire wr_enable, rd_src, overflow, zero, negative, mem_read,
+             word_we, byte_we, slt, lui, addm, byte_load, preslt;
     wire [1:0] alu_src2, control_type;
     wire [2:0] alu_op;
     wire [7:0] loaded_byte;
@@ -41,11 +42,13 @@ module full_machine(except, clock, reset);
     
     assign loaded_byte_32 = {24'b0, loaded_byte};
 
-    assign negative_flag = {31'b0, negative};
-
     mux2v byte_load_mux2(loaded_data, data_mem_out, loaded_byte_32, byte_load);
 
-    mux2v slt_mux2(slt_out, alu1_out, negative_flag, slt);
+    xor pre_slt(preslt, overflow, negative);
+
+    assign slt_flag = {31'b0, preslt};
+
+    mux2v slt_mux2(slt_out, alu1_out, preslt, slt);
 
     mux2v mem_read_mux2(wdata_0, slt_out, loaded_data, mem_read);
 
