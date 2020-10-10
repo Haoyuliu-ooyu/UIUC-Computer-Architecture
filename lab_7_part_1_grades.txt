@@ -1,0 +1,18 @@
+Grades for version committed on time
+	ast: 20.0 / 20
+			*Passed test: ast test 1 head_node->computed
+			*Passed test: ast test 1 return value
+			*Passed test: ast test 1 head_node->value
+			*Passed test: ast test 2 head_node->computed
+			*Passed test: ast test 2 return value
+			*Passed test: ast test 2 head_node->value
+			*Passed test: ast test 3 head_node->computed
+			*Passed test: ast test 3 return value
+			*Passed test: ast test 3 head_node->value
+			*Passed test: ast test 4 head_node->computed
+			*Passed test: ast test 4 return value
+			*Passed test: ast test 4 head_node->value
+		
+Total: 20.0 / 20
+
+Final Score: 20.0 / 20
