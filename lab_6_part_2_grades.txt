@@ -1,0 +1,18 @@
+Grades for version committed on time
+	selection_sort: 40.0 / 40
+			*Passed test: selection sort test 1
+			*Passed test: selection sort test 2
+			*Passed test: selection sort test 3
+			*Passed test: selection sort test 4
+		
+	draw_gradient: 40.0 / 40
+			*Passed test:  draw gradient test 1 changed
+			*Passed test:  draw gradient test 1 map
+			*Passed test: draw gradient test 2 changed
+			*Passed test: draw gradient test 2 map
+			*Passed test: draw gradient test 3 changed
+			*Passed test: draw gradient test 2 map
+		
+Total: 80.0 / 80
+
+Final Score: 80.0 / 80
