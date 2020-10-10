@@ -11,7 +11,7 @@ Grades for version committed on time
 			*Passed test: draw gradient test 2 changed
 			*Passed test: draw gradient test 2 map
 			*Passed test: draw gradient test 3 changed
-			*Passed test: draw gradient test 2 map
+			*Passed test: draw gradient test 3 map
 		
 Total: 80.0 / 80
 
