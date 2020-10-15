@@ -110,6 +110,7 @@ solve:
         lw $s2, 8($a0) #int max_dots = puzzle->max_dots
         add $s3, $a0, 12 #puzzle->board
         add $s4, $a0, 268 #puzzle->doninos_used
+
         sub $t0, $s1, 1 #num_cols - 1
         # s5 = next_row
         bne $t0, $a3, else_row

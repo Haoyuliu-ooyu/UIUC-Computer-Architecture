@@ -41,7 +41,7 @@ endmodule // dffe
 
 // register: A register which may be reset to an arbirary value
 //
-// q      (output) - Current value of register
+// q      (output) - Current valu e of register
 // d      (input)  - Next value of register
 // clk    (input)  - Clock (positive edge-sensitive)
 // enable (input)  - Load new value? (yes = 1, no = 0)
