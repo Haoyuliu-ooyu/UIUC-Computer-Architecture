@@ -1,0 +1,19 @@
+Grades for version committed on time
+	dominosa: 80.0 / 80
+			*Passed test: domino puzzle 1
+			*Passed test: domino puzzle 2
+			*Passed test: domino puzzle 3
+			*Passed test: domino puzzle 4
+			*Passed test: domino puzzle 5
+			*Passed test: domino puzzle 6
+			*Passed test: domino puzzle 7
+			*Passed test: domino puzzle 8
+			*Passed test: domino puzzle 9
+			*Passed test: domino puzzle 10
+			*Passed test: domino puzzle 11
+			*Passed test: domino puzzle 12
+			*Passed test: domino puzzle 13
+		
+Total: 80.0 / 80
+
+Final Score: 80.0 / 80
