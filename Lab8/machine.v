@@ -22,7 +22,7 @@ module machine(clk, reset);
    wire [29:0] EPC, eret_pc, interrupt_pc, num_value;
    wire TimerInterrupt, TimerAddress, timerMemRead, timerMemWrite, TakenInterrupt;
 
-   register #(30, 30'h100000) PC_reg(PC[31:2], next_PC[31:2], clk, /* enable */1'b1, reset);
+   register #(30, 30'h100000) PC_reg(PC[31:2], interrupt_pc, clk, /* enable */1'b1, reset);
    assign PC[1:0] = 2'b0;  // bottom bits hard coded to 00
    adder30 next_PC_adder(PC_plus4, PC[31:2], 30'h1);
    adder30 target_PC_adder(PC_target, PC_plus4, imm[29:0]);
@@ -52,7 +52,7 @@ module machine(clk, reset);
    and a2(timerMemWrite, MemWrite, ~TimerAddress);
 
    cp0 cp00000(c0_rd_data, EPC, TakenInterrupt, rd2_data, rd, next_PC, MTC0, ERET, TimerInterrupt, clk, reset);
-   mux2v #(32) cp0_data(c0_wr_data, c0_rd_data, wr_data, MFC0);
+   mux2v #(32) cp0_data(c0_wr_data, wr_data, c0_rd_data, MFC0);
 
    mux2v #(30) pc_eret(eret_pc, next_PC, EPC, ERET);
    assign num_value = 30'b100000000000000000000001100000;
