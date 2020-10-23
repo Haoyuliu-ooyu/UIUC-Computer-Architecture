@@ -48,7 +48,109 @@ main:
 	    mtc0    $t4, $12
 
 #Fill in your code here
+        li $t0, 1
+        sw $t0, 0xffff0010($zero)
 
+        li $t0, 45
+        sw $t0, 0xffff0014($zero)
+
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        
+        
+        loop:
+        lw $t1, 0xffff0020($zero) #
+        lw $t2, 0xffff0024($zero) #y
+        li $t0, 1
+        sw $t0, 0xffff00f4($zero)
+        
+            s_1:
+            bne $t1, 92, s_2
+            bne $t2, 92, s_2
+            li $t0, 90
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+            
+            s_2:
+            bne $t1, 92, s_3
+            bne $t2, 116, s_3
+            li $t0, 45
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+
+            s_3:
+            bne $t1, 140, s_4
+            bne $t2, 164, s_4
+            li $t0, 90
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+
+        s_4:
+        bne $t1, 140, s_5
+        bne $t2, 188, s_5
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_5:
+        bne $t1, 180, s_6
+        bne $t2, 188, s_6
+        li $t0, 90
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_6:
+        bne $t1, 180, s_7
+        bne $t2, 228, s_7
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_7:
+        bne $t1, 236, s_8
+        bne $t2, 228, s_8
+        #bne $t3, 0, s_8
+        li $t0, 45
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+
+        s_8:
+        bne $t1, 284, s_9
+        bne $t2, 276, s_9
+        li $t0, 225
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+        li $t3, 1
+
+        s_9:
+        bne $t1, 236, s_10
+        bne $t2, 228, s_10
+        bne $t3, 1, s_10
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_10:
+        bne $t1, 244, s_13
+        bne $t2, 228, s_13
+        li $t0, 225
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_13:
+        j loop
 infinite:
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
 
