@@ -142,14 +142,32 @@ main:
         sw $t0, 0xffff0018($zero)
 
         s_10:
-        bne $t1, 244, s_13
-        bne $t2, 228, s_13
+        bne $t1, 244, s_11
+        bne $t2, 228, s_11
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+
+        s_11:
+        bne $t1, 244, s_12
+        bne $t2, 212, s_12
         li $t0, 225
         sw $t0, 0xffff0014($zero)
         li $t0, 1
         sw $t0, 0xffff0018($zero)
 
+        s_12:
+        bne $t1, 236, s_13
+        bne $t2, 84, s_13
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
         s_13:
+        
         j loop
 infinite:
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
