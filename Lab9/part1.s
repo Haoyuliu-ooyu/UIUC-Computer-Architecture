@@ -167,7 +167,22 @@ main:
         sw $t0, 0xffff0018($zero)
 
         s_13:
-        
+        bne $t1, 180, s_14
+        bne $t2, 148, s_14
+        li $t0, 315
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_14:
+        bne $t1, 236, s_15
+        bne $t2, 92, s_15
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_15:
         j loop
 infinite:
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
