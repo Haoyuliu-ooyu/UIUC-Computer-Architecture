@@ -131,6 +131,7 @@ main:
         li $t0, 1
         sw $t0, 0xffff0018($zero)
         li $t3, 1
+        
 
         s_9:
         bne $t1, 236, s_10
