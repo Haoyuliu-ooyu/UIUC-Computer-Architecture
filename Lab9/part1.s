@@ -48,6 +48,53 @@ main:
 	    mtc0    $t4, $12
 
 #Fill in your code here
+        li $t0, 10
+        sw $t0, 0xffff0010($zero)
+
+        li $t0, 45
+        sw $t0, 0xffff0014($zero)
+
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+        
+        loop:
+        lw $t1, 0xffff0020($zero) #x
+        lw $t2, 0xffff0024($zero) #y
+        
+            s_1:
+            bne $t1, 92, s_2
+            bne $t2, 92, s_2
+            li $t0, 1
+                sw $t0, 0xffff00f4($zero)
+            li $t0, 90
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+            j loop
+            
+            s_2:
+            bne $t1, 92, s_3
+            bne $t2, 116, s_3
+            li $t0, 1
+                sw $t0, 0xffff00f4($zero)
+            li $t0, 45
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+            j loop
+
+            s_3:
+            bne $t1, 140, s_4
+            bne $t2, 164, s_4
+            li $t0, 1
+                sw $t0, 0xffff00f4($zero)
+            li $t0, 90
+            sw $t0, 0xffff0014($zero)
+            li $t0, 1
+                sw $t0, 0xffff0018($zero)
+            j loop
+        s_4:
+                j loop
 
 infinite:
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
