@@ -48,7 +48,11 @@ main:
 	    mtc0    $t4, $12
 
 #Fill in your code here
+<<<<<<< HEAD
         li $t0, 10
+=======
+        li $t0, 1
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
         sw $t0, 0xffff0010($zero)
 
         li $t0, 45
@@ -56,46 +60,172 @@ main:
 
         li $t0, 1
         sw $t0, 0xffff0018($zero)
+<<<<<<< HEAD
         
         loop:
         lw $t1, 0xffff0020($zero) #x
         lw $t2, 0xffff0024($zero) #y
+=======
+
+        
+        
+        loop:
+        lw $t1, 0xffff0020($zero) #
+        lw $t2, 0xffff0024($zero) #y
+        li $t0, 1
+        sw $t0, 0xffff00f4($zero)
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
         
             s_1:
             bne $t1, 92, s_2
             bne $t2, 92, s_2
+<<<<<<< HEAD
             li $t0, 1
                 sw $t0, 0xffff00f4($zero)
+=======
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
             li $t0, 90
             sw $t0, 0xffff0014($zero)
             li $t0, 1
                 sw $t0, 0xffff0018($zero)
+<<<<<<< HEAD
             j loop
+=======
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
             
             s_2:
             bne $t1, 92, s_3
             bne $t2, 116, s_3
+<<<<<<< HEAD
             li $t0, 1
                 sw $t0, 0xffff00f4($zero)
+=======
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
             li $t0, 45
             sw $t0, 0xffff0014($zero)
             li $t0, 1
                 sw $t0, 0xffff0018($zero)
+<<<<<<< HEAD
             j loop
+=======
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
 
             s_3:
             bne $t1, 140, s_4
             bne $t2, 164, s_4
+<<<<<<< HEAD
             li $t0, 1
                 sw $t0, 0xffff00f4($zero)
+=======
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
             li $t0, 90
             sw $t0, 0xffff0014($zero)
             li $t0, 1
                 sw $t0, 0xffff0018($zero)
+<<<<<<< HEAD
             j loop
         s_4:
                 j loop
 
+=======
+
+        s_4:
+        bne $t1, 140, s_5
+        bne $t2, 188, s_5
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_5:
+        bne $t1, 180, s_6
+        bne $t2, 188, s_6
+        li $t0, 90
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_6:
+        bne $t1, 180, s_7
+        bne $t2, 228, s_7
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_7:
+        bne $t1, 236, s_8
+        bne $t2, 228, s_8
+        #bne $t3, 0, s_8
+        li $t0, 45
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+
+        s_8:
+        bne $t1, 284, s_9
+        bne $t2, 276, s_9
+        li $t0, 225
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+        li $t3, 1
+        
+
+        s_9:
+        bne $t1, 236, s_10
+        bne $t2, 228, s_10
+        bne $t3, 1, s_10
+        li $t0, 0
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_10:
+        bne $t1, 244, s_11
+        bne $t2, 228, s_11
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+
+        s_11:
+        bne $t1, 244, s_12
+        bne $t2, 212, s_12
+        li $t0, 225
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_12:
+        bne $t1, 236, s_13
+        bne $t2, 84, s_13
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_13:
+        bne $t1, 180, s_14
+        bne $t2, 148, s_14
+        li $t0, 315
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_14:
+        bne $t1, 236, s_15
+        bne $t2, 92, s_15
+        li $t0, 270
+        sw $t0, 0xffff0014($zero)
+        li $t0, 1
+        sw $t0, 0xffff0018($zero)
+
+        s_15:
+        j loop
+>>>>>>> 9811572e225b4ee920d4d47b25e75e13565b4363
 infinite:
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
 
