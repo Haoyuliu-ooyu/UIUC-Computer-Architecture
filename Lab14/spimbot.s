@@ -81,7 +81,38 @@ end_____:
         lw      $ra, 4($sp)
         add     $sp, $sp, 8
 
+        li      $t1, 1
+        sw      $t1, PICKUP
+        li      $t1, 10
+        sw      $t1, VELOCITY
+        li      $t1, 1
+        sw      $t1, ANGLE_CONTROL
+
+        li      $t1, 90
+
+        move    $t3, $t1
+        sll     $t1, $t1, 13
+        move    $t2, $t1
+        xor     $t1, $t2, $t3
+
+        move    $t3, $t1
+        srl     $t1, $t1, 17
+        move    $t2, $t1
+        xor     $t1, $t2, $t3
+
+        move    $t3, $t1
+        sll     $t1, $t1, 5
+        move    $t2, $t1
+        xor     $t1, $t2, $t3
+
+        rem     $t1, $t1, 360
+
+        sw      $t1, ANGLE
+
+
 infinite:
+        li      $t1, 1
+        sw      $t1, PICKUP
         j       infinite              # Don't remove this! If this is removed, then your code will not be graded!!!
 
 
@@ -543,6 +574,34 @@ interrupt_dispatch:                     # Interrupt:
 bonk_interrupt:
         sw      $0, BONK_ACK
 #Fill in your code here
+        
+        li      $v0, 1
+        sw      $v0, ANGLE_CONTROL
+
+        lw      $v0, ANGLE
+
+        move    $k0, $v0
+        sll     $v0, $v0, 13
+        move    $a0, $v0
+        xor     $v0, $a0, $k0
+
+        move    $k0, $v0
+        srl     $v0, $v0, 17
+        move    $a0, $v0
+        xor     $v0, $a0, $k0
+
+        move    $k0, $v0
+        sll     $v0, $v0, 5
+        move    $a0, $v0
+        xor     $v0, $a0, $k0
+
+        rem     $v0, $v0, 360
+
+        sw      $v0, ANGLE
+        li      $v0, 10
+        sw      $v0, VELOCITY
+
+
         j       interrupt_dispatch      # see if other interrupts are waiting
 
 request_puzzle_interrupt:
@@ -570,3 +629,4 @@ done:
 .set noat
         move    $at, $k1                # Restore $at
 .set at
+        eret

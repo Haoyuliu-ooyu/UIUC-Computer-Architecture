@@ -1,0 +1,1 @@
+For the main bot, we set velocity to ten with a random angle, and set the constant pick up flag to 1. Each time when a bonk interrupt occurs, we set a different random angle and then set velocity to ten.
