@@ -1,7 +1,7 @@
 Grades for version committed on time
-	spimbot: 159.18 / 100
+	spimbot: 89.18 / 100
 			*Passed test: ["Your team 'Team Oreo' qualified and played in the tournament, finishing rank 46!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 42!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 60!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 56!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 53!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 42!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 109!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 57!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 91!", "Your team 'Team Oreo' qualified and played in the tournament, finishing rank 34!"]
 		
-Total: 159.18 / 100
+Total: 89.18 / 100
 
-Final Score: 159.18 / 100
+Final Score: 89.18 / 100
